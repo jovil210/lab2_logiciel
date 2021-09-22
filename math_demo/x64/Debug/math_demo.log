@@ -1,0 +1,2 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Pro\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(514,5): error : L'élément <RuntimeLibrary> a une valeur non valide "DLL de débogage multithread (/MD)".
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Pro\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(514,5): error MSB6011: Paramètres non valides passés à la tâche Microsoft.Build.CPPTasks.CL.

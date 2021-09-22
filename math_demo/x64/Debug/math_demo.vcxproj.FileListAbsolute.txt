@@ -1,0 +1,2 @@
+C:\Users\jvillene13\Desktop\math_demo\x64\Debug\math_demo.dll
+C:\Users\jvillene13\Desktop\math_demo\x64\Debug\math_demo.pdb

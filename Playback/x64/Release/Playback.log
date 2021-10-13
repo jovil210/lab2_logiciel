@@ -1,0 +1,10 @@
+﻿  playback.cpp
+C:\Users\Joel\Desktop\lab2_logiciel\Playback\playback.cpp(38,18): warning C4101: 'evCode' : variable locale non référencée
+C:\Users\Joel\Desktop\lab2_logiciel\Playback\playback.cpp(148,20): warning C4150: suppression de pointeur vers type incomplet 'CVideoRenderer' ; aucun destructeur appelé
+C:\Users\Joel\Desktop\lab2_logiciel\Playback\playback.h(17): message : voir la déclaration de 'CVideoRenderer'
+     Création de la bibliothèque C:\Users\Joel\Desktop\lab2_logiciel\Playback\x64\Release\Playback.lib et de l'objet C:\Users\Joel\Desktop\lab2_logiciel\Playback\x64\Release\Playback.exp
+  Génération de code en cours
+  Previous IPDB not found, fall back to full compilation.
+  All 2 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  Playback.vcxproj -> C:\Users\Joel\Desktop\lab2_logiciel\Playback\x64\Release\Playback.pyd

@@ -6,12 +6,13 @@ PyObject* random(PyObject* self, PyObject* args)
 {
 
     /* initialize random seed: */
-
     srand(time(NULL));
-
-    int random = rand() % 10;
-
-    PyObject* python_val = Py_BuildValue("i", random);
+    int number=0;
+    
+    if (!PyArg_ParseTuple(args, "i", &number))
+        return NULL;
+    int random = number - rand() % 10;
+    PyObject* python_val = Py_BuildValue("i",random);
 
     return python_val;
 
@@ -20,7 +21,7 @@ PyObject* random(PyObject* self, PyObject* args)
 
 
 static PyMethodDef math_demo_methods[] = {
-    {"random",(PyCFunction)random, METH_NOARGS,"Generate random number betweeen 0-9"},
+    {"random",(PyCFunction)random, METH_VARARGS,"Generate random number between 0-9"},
     {NULL,NULL,0,NULL}
 };
 

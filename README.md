@@ -12,7 +12,7 @@ Le laboratoire a pour but de réutiliser le [laboratoire 1](https://github.com/j
 * Installer [Python 3.7+](https://www.python.org/downloads/)
 * Dans le répertoire Playback, ouvrir Playback.sln avec Visual Studio
 * À partir de Visual Studio, faire les modifications suivantes:
-* Mettre en mode Release et sur en 64 bits (x64)
+* Mettre en mode Release et sur plateforme 64 bits (x64)
 * Aller dans *Projet -> Propriétés -> Propriétés de configuration -> Type de configuration* et changer pour __Bibliothèque dynamique (dll)__
 * Puis, toujours dans les propriétés, aller dans *Paramètres avancés* et modifier *Extension du fichier cible* pour __.pyd__
 * Finalement, toujours dans les propriétés, aller dans *Répertoires VC++* et modifier *Répertoires Include* et *Répertoires de bibliothèques* afin d'ajouter les répertoires propres à Python. Ceux-ci se trouve habituellement dans le répertoire suivant avec les noms **libs** et **include**:

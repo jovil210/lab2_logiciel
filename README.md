@@ -15,7 +15,7 @@ Le laboratoire a pour but de réutiliser le [laboratoire 1](https://github.com/j
 * Mettre en mode Release et sur plateforme 64 bits (x64)
 * Aller dans *Projet -> Propriétés -> Propriétés de configuration -> Type de configuration* et changer pour __Bibliothèque dynamique (dll)__
 * Puis, toujours dans les propriétés, aller dans *Paramètres avancés* et modifier *Extension du fichier cible* pour __.pyd__
-* Finalement, toujours dans les propriétés, aller dans *Répertoires VC++* et modifier *Répertoires Include* et *Répertoires de bibliothèques* afin d'ajouter les répertoires propres à Python. Ceux-ci se trouve habituellement dans le répertoire suivant avec les noms **libs** et **include**:
+* Finalement, toujours dans les propriétés, aller dans *Répertoires VC++* et modifier *Répertoires Include* et *Répertoires de bibliothèques* afin d'ajouter les répertoires propres à Python. Ceux-ci se trouvent habituellement dans le répertoire suivant avec les noms **libs** et **include**:
 
 __```C:\Users\<nom de l'utilisateur>\AppData\Local\Programs\Python\PythonXX\```__
 
@@ -35,7 +35,7 @@ Playback.play_video("path\\to\\video.avi");
 ```
 Il est important d'écrire le nom du fichier avec le bon emplacement de dossier. L'exemple VideoExample.py devrait fonctionner car il est dans le repo.
 ***
-Finalement, la bibliothèque dynamique créer en C++ s'occupera de faire jouer la vidéo et l'utilisateur pourra effectuer les 4 fonctions nommés plus haut:
+Finalement, la bibliothèque dynamique créée en language C++ s'occupera de faire jouer la vidéo et l'utilisateur pourra effectuer les 4 fonctions nommés plus haut:
 * P: Play/Pause
 * A: Accélérer
 * R: Retour au début

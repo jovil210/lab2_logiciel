@@ -1,6 +1,6 @@
 
 #include <Python.h>
-
+#include <iostream>
 
 PyObject* random(PyObject* self, PyObject* args)
 {
@@ -11,6 +11,7 @@ PyObject* random(PyObject* self, PyObject* args)
     
     if (!PyArg_ParseTuple(args, "i", &number))
         return NULL;
+    std::cout << "Randomizing" << std::endl;
     int random = number - rand() % 10;
     PyObject* python_val = Py_BuildValue("i",random);
 

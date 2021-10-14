@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="playback.cpp" />
+    <ClCompile Include="play_video.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="playback.h" />

@@ -1,11 +1,9 @@
-#pragma once
 #pragma comment(lib, "Strmiids.lib")
 #include <new>
 #include <windows.h>
 #include <dshow.h>
 #include <conio.h>
 #include <iostream>
-#include <Python.h>
 // THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
 // ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
 // THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
@@ -47,7 +45,7 @@ public:
 
     PlaybackState State() const { return m_state; }
 
-    void OpenFile(PyObject* self, PyObject* args);
+    HRESULT OpenFile(PCWSTR pszFileName);
 
     HRESULT Play();
     HRESULT Pause();

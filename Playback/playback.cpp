@@ -6,11 +6,26 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 
 #include "playback.h"
-void DShowPlayer::OpenFile(PyObject* self, PyObject* args)
+
+DShowPlayer::DShowPlayer() :
+    m_state(STATE_NO_GRAPH),
+    m_pGraph(NULL),
+    m_pControl(NULL),
+    m_pEvent(NULL),
+    m_pVideo(NULL),
+    m_pSeek(NULL)
+{
+
+}
+
+DShowPlayer::~DShowPlayer()
+{
+    TearDownGraph();
+}
+
+HRESULT DShowPlayer::OpenFile(PCWSTR pszFileName)
 {
     IBaseFilter* pSource = NULL;
-    PCWSTR pszFileName = L"Example.avi";
-
     // Create a new filter graph. (This also closes the old one, if any.)
     HRESULT hr = InitializeGraph();
     if (FAILED(hr))
@@ -49,6 +64,7 @@ done:
         TearDownGraph();;
     }
     SafeRelease(&pSource);
+    return hr;
 }
 
 
@@ -178,7 +194,7 @@ HRESULT DShowPlayer::VideoLoop() {
             break;
         case 'a':
         case 'A':
-            if (rate < 4.0)
+            if (rate < 2.0)
             {
                 rate = rate + 0.25;
                 hr = m_pSeek->SetRate(rate + 0.25);
@@ -200,24 +216,4 @@ HRESULT DShowPlayer::VideoLoop() {
     hr = Stop();
     std::cout << "Quitting ... " << std::endl;
     return hr;
-}
-
-static PyMethodDef Playback_methods[] = {
-    {"OpenFile",(PyCFunction)OpenFile, METH_NOARGS,"Plays a video with the possibility of A: accelerate, P: Pause/Play, R: Restart or Q: Quit"},
-    {NULL,NULL,0,NULL}
-};
-static struct PyModuleDef Playback_module =
-{
-    PyModuleDef_HEAD_INIT,
-    "math_demo", /* name of module */
-    "",          /* module documentation, may be NULL */
-    -1,          /* size of per-interpreter state of the module, or -1 if the module keeps state in global variables. */
-    Playback_methods
-};
-
-PyMODINIT_FUNC PyInit_Playback(void)
-
-{
-
-    return PyModule_Create(&Playback_module);
 }
